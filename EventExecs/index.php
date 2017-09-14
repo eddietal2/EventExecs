@@ -64,6 +64,63 @@ $("a").on('click', function(event) {
 });
 });
 </script>
+
+<?php
+  if(isset($_POST['submit'])){
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
+    $phone=$_POST['phone'];
+    $years=$_POST['years'];
+    $mang=$_POST['mang'];
+    $about=$_POST['about'];
+    $positions=$_POST['positions'];
+    // $positions=$_POST['positions'];
+
+    $to='eddielacrosse2@gmail.com';
+    $subject='EventExecs';
+
+    $message="Position Desired: ".$positions. "\n\n".
+            "Name: ".$fname. "\n\n".
+             "Years: ".$years. "\n\n".
+             "Phone: ".$phone. "\n\n".
+             "Managment Experience: "."\n".$mang. "\n\n\n\n".
+             "About Client: "."\n".$about. "\n\n\n\n";
+
+
+
+    $headers="From: ".$email;
+
+    if(mail($to, $subject, $message, $headers  )) {
+      echo "<h1>Form 1 Sent</h1>";
+        }
+    else{
+      echo "Something went wrong";
+    }
+  }
+
+ if(isset($_POST['submit2'])){
+   $name=$_POST['name'];
+   $emails=$_POST['emails'];
+   $message=$_POST['message'];
+
+   $to='eddielacrosse2@gmail.com';
+   $subject='EventExecs';
+
+   $message="Name: ".$name. "\n".
+            "Email: ".$emails. "\n\n".
+            "Message: "."\n".$message;
+
+
+    $headers="From: ".$email;
+
+   if(mail($to, $subject, $message, $headers  )) {
+      echo "<h1>Form 2 Sent</h1>";
+        }
+     else{
+       echo "Something went wrong nigguh!!!";
+    }
+   }
+?>
 <head>
 <body data-spy="scroll" data-target=".navbar" data-offset="">
 <!-- NAVBAR --><!-- NAVBAR --><!-- NAVBAR -->
@@ -90,10 +147,10 @@ $("a").on('click', function(event) {
       <li class="contactButton"><a style="color: black;" href="#section5" >CONTACT US TODAY</a></li>
     </ul>
     <div class="socialmedianav">
-      <i class="fa fa-facebook fa-2x"></i>
-      <i class="fa fa-twitter fa-2x"></i>
-      <i class="fa fa-instagram fa-2x"></i>
-      <i class="fa fa-linkedin fa-2x"></i>
+      <i style="display: inline;" class="fa fa-facebook fa-2x"></i>
+      <i style="display: inline;" class="fa fa-twitter fa-2x"></i>
+      <i style="display: inline;" class="fa fa-instagram fa-2x"></i>
+      <i style="display: inline;" class="fa fa-linkedin fa-2x"></i>
     </div>
     </div>
     </div>
@@ -107,20 +164,16 @@ $("a").on('click', function(event) {
           frameborder="0" allowfullscreen></iframe>
         <div class="row">
           <div class="col-xs-12 logo">
-
             <img src="http://i.imgur.com/zfE9wGK.png" class=" animated fadeInDown wow"
                  style="height: auto; width: 100%; margin: 0 auto; "><br>
-
-        </div>
-
-
+          </div>
       </div>
-
 </div>
 <!--                 <h3 class="effect-underline " style="left: 20%;"><b>Volunteer Management</b><br><br></h3><br>
  -->
+
         <div class="row" id="Services">
-          <div class="col-md-12 about">
+          <div class="col-xs-12 about">
 
             <div class="row">
               <div class="col-md-12 afterJumbotron">
@@ -128,40 +181,43 @@ $("a").on('click', function(event) {
 
                     <div style="text-align: center; margin-bottom: -50px; margin-top: 50px;">
                       <img class="logo2" style="margin-bottom: -35px;" src="http://i.imgur.com/JZzaGkF.png"></div>
-                      <p class="motto" style="font-family: 'Caveat', cursive; font-size: 30px; text-align: center; color: black; font-weight: bold; margin-bottom:130px;">
+                      <p class="motto" style="font-family: 'Caveat', cursive;
+                      . text-align: center; color: black; font-weight: bold; margin-bottom:130px;">
                         Providing Executive-Level Event Experiences, <span style="color: #f7c200;">every time</span> .</p>
                 </div>
               </div>
             </div>
 
             <div class="row" style="margin-top:100px;">
-              <h1  class="hOne ourservices sectionHeader">OUR SERVICES</h1>
+              <h1  class="hOne ourservices sectionHeader" style="font-size: 70px;">OUR SERVICES</h1>
+              <hr class="headers" style="box-shadow: 5px 0 10px 2px rgba(245,245,245,0.24); border-color: rgba(245,245,245,0.6); margin-bottom: 150px;">
 
-              <div style=" height: auto;" class="col-md-4 col-xs-12 s1 ">
-                <i class="hOne animated wow bounceInDown fa fa-calendar fa-3x " style="color: white; margin-bottom: 40px;"></i>
+              <div style=" height: auto;" class="col-md-6 col-sm-6 col-xs-12 s1 ">
+                <i class="hOne animated wow bounceInDown fa fa-calendar fa-3x " style="color: white; margin-bottom: 0px;"></i>
                 <div class="container">
-                  <h1 class=" edm lightSpeedIn animated wow">Event Day Management</h1>
-                  <div class="servicesBox eventdaymgt">
+                  <h1 class="hOne  lightSpeedIn animated wow" id="edm"> Event Day Management</h1>
+                  <div class="eventdaymgt" style="margin-left: 10%;">
+
                   </div>
                 </div>
               </div>
 
 
-              <div style=" height: auto;" class="col-md-4 col-xs-12 s1 ">
-                <i class="hOne animated wow bounceInDown fa fa-check fa-3x " style="color: white; margin-bottom: 40px;"></i>
+              <div style=" height: auto;" class="col-md-6 col-sm-6 col-xs-12 s1 ">
+                <i class="hOne animated wow bounceInDown fa fa-check fa-3x " style="color: white; margin-bottom: 0px;"></i>
                 <div class="container">
-                  <h1 class="hOne  lightSpeedIn animated wow">Registration Management</h1>
-                  <div class="servicesBox regmgt">
+                  <h1 class="hOne  lightSpeedIn animated wow" id="rg"> Registration Management</h1>
+                  <div class="regmgt" style="margin-left: 10%;">
                   </div>
                 </div>
               </div>
 
 
-              <div style=" height: auto;" class="col-md-4 col-xs-12 s1 ">
-                <i class="hOne animated wow bounceInDown fa fa-area-chart fa-3x " style="color: white; margin-bottom: 40px;"></i>
+              <div style=" height: auto;" class="col-md-12 col-sm-6 col-xs-12 s1 ">
+                <i class="hOne animated wow bounceInDown fa fa-area-chart fa-3x " style="color: white; margin-bottom: 0px;"></i>
                 <div class="container">
-                  <h1 class="hOne  lightSpeedIn animated wow">Production & Stage Management</h1>
-                  <div class="servicesBox prostagemgt">
+                  <h1 class="hOne  lightSpeedIn animated wow" id="psm"> Production & Stage Management</h1>
+                  <div class="prostagemgt"  style="margin-left: 24%;">
                   </div>
                 </div>
               </div>
@@ -171,31 +227,31 @@ $("a").on('click', function(event) {
 
 
             <div class="row" style="margin-top: 50px;  padding-bottom: 60px;">
-              <div  style=" height: auto;" class="col-md-4 col-xs-12 s1 ">
-                <i class="hOne animated wow bounceInDown fa fa-star-o fa-3x " style="color: white; margin-bottom: 40px;"></i>
+              <div  style=" height: auto;" class="col-md-6 col-sm-6 col-xs-12 s1 ">
+                <i class="hOne animated wow bounceInDown fa fa-star-o fa-3x " style="color: white; margin-bottom: 0px;"></i>
                 <div class="container">
-                  <h1 class="hOne  lightSpeedIn animated wow">Marketing & Digital Media Management</h1>
-                  <div class="servicesBox markdigmgt">
+                  <h1 class="hOne  lightSpeedIn animated wow" id="mdmm">Marketing & Digital Media Management</h1>
+                  <div class="markdigmgt" style="margin-left: 10%;">
                   </div>
                 </div>
               </div>
 
 
-              <div  style=" height: auto;" class="col-md-4 col-xs-12 s1 ">
-                <i class="hOne animated wow bounceInDown fa fa-suitcase fa-3x" style="color: white; margin-bottom: 40px;"></i>
+              <div  style=" height: auto;" class="col-md-6 col-sm-6 col-xs-12 s1 ">
+                <i class="hOne animated wow bounceInDown fa fa-suitcase fa-3x" style="color: white; margin-bottom: 0px;"></i>
                 <div class="container">
-                  <h1 class="hOne lightSpeedIn animated wow">Vendor Management</h1>
-                  <div class="servicesBox vendormgt">
+                  <h1 class="hOne lightSpeedIn animated wow" id="vm">Vendor Management</h1>
+                  <div class="vendormgt" style="margin-left: 10%;">
                   </div>
                 </div>
               </div>
 
 
-              <div  style=" height: auto;" class="col-md-4 col-xs-12 s1 ">
-                <i class="hOne animated wow bounceInDown fa fa-users fa-3x " style="color: white; margin-bottom: 40px;"></i>
+              <div  style=" height: auto;" class="col-md-12 col-sm-6 col-xs-12 s1 ">
+                <i class="hOne animated wow bounceInDown fa fa-users fa-3x " style="color: white; margin-bottom: 0px;"></i>
                 <div class="container">
-                  <h1 class="hOne  lightSpeedIn animated wow">Volunteer Management</h1>
-                  <div class="servicesBox volmgt">
+                  <h1 class="hOne  lightSpeedIn animated wow" id="volm">Volunteer Management</h1>
+                  <div class="volmgt" style="margin-left: 24%;">
                   </div>
                 </div>
               </div>
@@ -207,34 +263,34 @@ $("a").on('click', function(event) {
 <!-- HOVRER TEXT ANIMATION  -->
 
 
-          <div class="container-fluid services" style="height: auto; margin-bottom:0; box-shadow: 0 2px 6px -6px white;">
+          <div class="container-fluid services" style="height: auto; padding-bottom:100px; box-shadow: 0 2px 6px -6px white;">
 
               <h1 class="sectionHeader" style="padding-top: 20px; text-align: center; color: black;">
-                We specialize in the following types of events:</h1>
-            <div class="row" style="background-color: rgba(215,215,215,0.2); box-shadow: inset 1px 1px 10px -2px rgba(0,0,0,0.4); height: auto;">
-              <div class="col-xs-12">
-              <div class="col-xs-12 col-md-6"  style="background-color: rgba(215,215,215,1);">
+                We specialize in the following types of events:</h1><hr class="headers">
+            <div class="row" style="background-color: rgba(215,215,215,0.2);  height: auto;">
+              <div class="col-xs-12 col-md-6"  style="background-color: rgba(215,215,215,0);">
+                <div style="">
                 <ul>
-                  <li class="animate wow fadeInLeft" style="animation-delay: 0.5s">Experiential Events</li>
-                  <li class="animate wow fadeInLeft" style="animation-delay: 0.75s">Brand Activations</li>
-                  <li class="animate wow fadeInLeft" style="animation-delay: 1s">Conferences</li>
-                  <li class="animate wow fadeInLeft" style="animation-delay: 1.25s">Banquets</li>
-                  <li class="animate wow fadeInLeft" style="animation-delay: 1.50s">Festivals</li>
-                  <li class="animate wow fadeInLeft" style="animation-delay: 1.75s">Concerts</li>
-                  <li class="animate wow fadeInLeft" style="animation-delay: 2s">Custom Events</li>
+                  <li class="animate wow fadeInLeft" style="animation-delay: 0.5s">Experiential Events</li><hr>
+                  <li class="animate wow fadeInLeft" style="animation-delay: 0.75s">Brand Activations</li><hr>
+                  <li class="animate wow fadeInLeft" style="animation-delay: 1s">Conferences</li><hr>
+                  <li class="animate wow fadeInLeft" style="animation-delay: 1.25s">Banquets</li><hr>
+                  <li class="animate wow fadeInLeft" style="animation-delay: 1.50s">Festivals</li><hr>
+                  <li class="animate wow fadeInLeft" style="animation-delay: 1.75s">Concerts</li><hr>
+                  <li class="animate wow fadeInLeft" style="animation-delay: 2s">Custom Events</li><hr>
                 </ul>
                 <br><br>
+              </div></div>
+              <div class="col-xs-12 col-md-6 ">
+                  <img style="height: auto; width: 80%; margin-top: 6%; box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.6);" src="https://i.imgur.com/Llo4kUa.jpg?1">
               </div>
-              <div class="col-xs-3"  style="background-color:red ; height: 400px; width: auto;">
-                <!-- <img style="margin: 30px;" src="https://i.imgur.com/Llo4kUa.jpg?1"> -->
               </div>
-              </div>
-              </div>
-            </div></div>
+            </div>
 
 
               <div class="container-fluid owner" id="sectionStaff">
                 <h1 class="zoomIn animated wow sectionHeader"style=" color: white;">MEET THE STAFF</h1>
+                  <hr class="headers" style="box-shadow: 5px 0 10px 2px rgba(245,245,245,0.24); border-color: rgba(245,245,245,0.6);">
 
                     <div>
                       <img class="animate pulse wow photo"src="http://i.imgur.com/SzCjNGJ.jpg?1" style="margin-top: 50px; box-shadow: 0 10px 300px 0 rgba(255,255,255,0.6);  border-radius: 100%; border: 2px solid white;">
@@ -258,12 +314,12 @@ $("a").on('click', function(event) {
 
                   <!-- Modal content-->
                   <div class="modal-content"  style="margin-top: 0px;">
-                    <div class="modal-body" style="background-color: rgba(245,245,245,0.8);">
+                    <div class="modal-body " style="background-color: rgba(245,245,245,0.8);">
 
                       <h1 style="margin-bottom: -70px; margin-top: 50px; ">NINA PAYNE</h1><br>
 
-                      <p class=""style="padding: 100px;  font-weight: bold; height: auto;
-                      font-family: 'Hind', sans-serif; font-family: 'NexaLight', sans-serif; font-size: 18px; text-align: center; line-height: 30px;">
+                      <p class="staffInfo"style="  font-weight: bold; height: auto;
+                      font-family: 'Hind', sans-serif; font-family: 'NexaLight', sans-serif;  text-align: center; ">
                         Because of her executive-level client service, organizational skills, vendor relationships and a “Get it Done” determination, clients have trusted Nina Payne with their event management needs for over 15 years. Event Execs has provided Event Management, Logistics and Staffing for clients such as; General Motors, Detroit Riverfront Conservancy, Detroit Police Department, Chene Park Amphitheatre, Corporate Production Services, Detroit Public Safety Foundation and more.  Event Exec’s events include; Detroit Grand Prix 2016 and 2017, Delta Annual World Conference 2017, Above and Beyond Awards 2014 - present, Women in Blue 2015-Present, ASAE Conference 2016, Motown Recording Artist Kem’s Mack and Third 2 Day Concert Festival 2009-2014 and many more. She also has a passion for the community and is the Event Management Company for manages a few community events every year to give back.  Event Execs, a division of Foundation Management is always striving to meet the needs of its’ clients by continuing to provide services that meet budget and time constraints.
                       </p>
                       <button type="button" class="contactFormButton" style="float: right; font-family: 'NexaLight', sans-serif;"data-dismiss="modal">Close</button>
@@ -292,7 +348,7 @@ $("a").on('click', function(event) {
 
             <div class="container-fluid"  id="section4">
               <div class="clients">
-                <h1 class="animated wow fadeIn sectionHeader">OUR CLIENTS</h1>
+                <h1 class="animated wow fadeIn sectionHeader">OUR CLIENTS</h1><hr class="headers">
                 <div class="tech-slideshow wow animated fadeInUp" style="margin-bottom: 60px;">
                   <div class="mover-2"></div>
               </div>
@@ -303,7 +359,7 @@ $("a").on('click', function(event) {
         <div class="container-fluid" id="section2" style="width: 100%;">
           <div class="row">
           <div class="col-md-12 latest">
-            <h1 class="sectionHeader">EVENT GALLERY</h1><br>
+            <h1 class="sectionHeader">EVENT GALLERY</h1><hr class="headers">
             <div id="myCarousel" class="carousel slide animated fadeInLeftBig wow" data-ride="carousel">
 <!-- Indicators -->
 
@@ -371,13 +427,15 @@ $("a").on('click', function(event) {
                       <div class="container-fluid testimonials"  id="section3" >
                         <div class="row" style="margin: 0 auto;">
                                 <div class="col-md-12 col-xs-12 testOne" style="margin-top: 50px;">
-                                  <h1 class="sectionHeader">TESTIMONIALS</h1>
+                                  <h1 class="sectionHeader">TESTIMONIALS</h1><hr class="headers">
+                                  <div style="margin-top: 5%;">
                                   <p style="font-family: 'NexaLight'"> " Nina is an affable, smart, and determined professional.   She will work tirelessly until the job is complete. " </p><br>
-                                  <ul style="float: right; margin-top: 10px; list-style: none;">
+                                  <ul style=" argin-top: 10px; list-style: none;">
                                     <li style="font-style: italic; color: black;"> Troy Springer </li>
                                     <li style="font-style: italic; color: black;"> CEO </li>
                                     <li style="font-style: italic; color: black;"> Corporate Production Services </li>
                                   </ul>
+                                </div>
                                 </div>
                             </div></div>
 
@@ -387,8 +445,6 @@ $("a").on('click', function(event) {
 
 
                       <!-- CONTACT --><!-- CONTACT --><!-- CONTACT -->
-
-
 
 
 
@@ -435,29 +491,41 @@ $("a").on('click', function(event) {
                             <form  method="post">
                               <input class="inputFields" name="fname" placeholder="First Name"><br>
                               <input class="inputFields" name="lname" placeholder="Last Name">
-                              <input class="inputFields" name="phone" placeholder="Phone Number">
+                              <input class="inputFields" name="phone" placeholder="Phone Number (xxx - xxx - xxxx)">
                               <input class="inputFields" name="years" placeholder="How many years in the business?">
-                              <input class="inputFields" name="mang" placeholder="Managerial Experience?">
+                              <textarea style="width: 95%;" class="inputFields" name="mang" placeholder="Managerial Experience? If Yes, Explain: "></textarea>
+                              <textarea style="width: 95%;" class="inputFields" name="about" placeholder="About Me: "></textarea>
 
 
 
                           <div class="form-group">
-                          <select class="positions inputFields" placeholder="Select Position">
-                          <option class="inputFields" value="1">Select Position</option>
-                          <option class="inputFields" value="2">Event Manager</option>
-                          <option class="inputFields" value="3">Production Manager</option>
-                          <option class="inputFields" value="4">Stage Manager</option>
-                          <option class="inputFields" value="5">Stage Hand</option>
-                          <option class="inputFields" value="6">Volunteer Manager</option>
-                          <option class="inputFields" value="7">Vendor Manager</option>
-                          <option class="inputFields" value="8">Event/Production Assistant</option>
+                          <select style="color: #f7c200;" name="positions" class="inputFields" placeholder="Select Position">
+                          <option class="inputFields" value="None Position Selected">Select Position</option>
+                          <option class="inputFields" value="Event Manager">Event Manager</option>
+                          <option class="inputFields" value="Production Manager">Production Manager</option>
+                          <option class="inputFields" value="Stage Manager">Stage Manager</option>
+                          <option class="inputFields" value="Stage Hand">Stage Hand</option>
+                          <option class="inputFields" value="Volunteer Manager">Volunteer Manager</option>
+                          <option class="inputFields" value="Vendor Manager">Vendor Manager</option>
+                          <option class="inputFields" value="Event/Production Assistant">Event/Production Assistant</option>
                           </select>
                           </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
                           </div>
                           <div class="modal-footer">
-                            <button class="contactFormButton modalButton" type="submit" name="submit" value="send" style="float: right; font-family: NexaLight">SEND</button>
+                            <button class=" modalButton" type="submit" name="submit" value="send" style="float: right; font-family: NexaLight">SEND</button>
 
                             </form>
                           </div>
@@ -474,11 +542,10 @@ $("a").on('click', function(event) {
                           <div class="modal-body" style="margin-top: 50px; padding-bottom: 150px;">
 
                             <form method="post" name="form2">
-                              <input class="inputFields" type="name" name="first_name" placeholder="First Name :" required><br>
-                              <input class="inputFields" type="email" name="last_name" placeholder="Last Name :" required><br>
-                              <input class="inputFields" type="phone" name="emails" placeholder="Email :" required><br>
-                              <textarea style="width: 100%;" rows="10"type="msg" name="message" placeholder="How can we help you? Explain the Event you need handled here: " required></textarea><br>
-                              <button class="contactFormButton modalButton" type="submit2" name="submit2" value="send" style="float: right; font-family: NexaLight">SEND</button>
+                              <input class="inputFields" type="name" name="name" placeholder="Name / Company :" required><br>
+                              <input class="inputFields" type="email" name="emails" placeholder="Email :" required><br>
+                              <textarea style="width: 95%;" rows="10"type="msg" name="message" placeholder="How can we help you? Explain the Event you need handled here: " required></textarea><br>
+                              <button class=" modalButton" type="submit2" name="submit2" value="send" style="float: right; font-family: NexaLight">SEND</button>
                             </form>                   </div>
                           </div>
 

@@ -1,4 +1,7 @@
 /*NAVBAR*//*NAVBAR*//*NAVBAR*/
+body {
+  ;
+}
 @font-face {
     font-family: NexaLight;
     src: url("NexaLight.otf");
@@ -22,6 +25,7 @@
   width: 20%;
   background-color: ;
   float: right;
+  margin-top: 10px;
 }
 .navbar-collapse {
   text-align: center;
@@ -42,8 +46,13 @@
 }
 hr {
   border-color: rgba(0,0,0,0.1);
-  margin-top: -20px;
+  margin-top: 2%;
   width: 50%;
+  box-shadow: 5px 0 10px 2px rgba(0,0,0,0.04);
+}
+.headers{
+  width: 30%;
+  padding-top: -10%;
 }
 ul {
   padding-right: -50px;
@@ -130,9 +139,9 @@ h3 {
 .services li{
   color: black;
   list-style: none;
-  text-align: right;
+  text-align: center;
   font-family: NexaLight;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 45px;
   margin: 20px;
 }
@@ -171,8 +180,7 @@ h3 {
   transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .jumbotron{
-  height: 983px;
-  margin-bottom: -0.05%;
+  height: 955px;
   width: 100%;
 }
 .contactButton{
@@ -442,7 +450,8 @@ a    opacity: 0, 0.6;
 }
 .s1{
   background-color: ;
-  height: 250px;
+  height: auto;
+  width: ;
 }
 .hOne{
   color: white;
@@ -543,6 +552,7 @@ a    opacity: 0, 0.6;
   bottom: 100%;
   left: 13%;
   right: 0;
+  display: ;
   background-image: url("eventdaymgt.png");
   background-repeat: no-repeat;
   overflow: hidden;
@@ -561,6 +571,7 @@ a    opacity: 0, 0.6;
   -webkit-animation-duration: 2s;
   animation-name: fade;
   animation-duration: 1s;
+  display: inline;
 }
 .regmgt {
   position: absolute;
@@ -741,7 +752,8 @@ a    opacity: 0, 0.6;
     background-size: cover;
   text-align: center;
   height: 100vh;
-  padding-bottom: 250px;
+  padding-bottom: 20px;
+  width: 100%;
 }
 .owner{
   background:
@@ -899,7 +911,7 @@ margin-top: 450px;
 
 }
 .testimonials {
-  background-color: rgba(247,194,0,0.2);
+  background-color: rgba(247,194,0,0.1);
   width: 100%;
   height: 500px;
 
@@ -1124,17 +1136,35 @@ textarea{
 }
 .sectionHeader{
   font-size:40px;
+  margin-bottom: 1%;
 }
 .servicesBox{
   width: auto;
-  background-color: red;
+}
+.motto {
+  font-size: 30px;
+}
+.photo2{
+  margin-top: 5%;
 }
 
 /*CONTACT CONTACT CONTACT*/
 
 
 /*MEDIA QUERIES*/
-@media (max-width: 410px) {
+@media (max-width: 500px) {
+  .photo2{
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .services li{
+    font-size: 15px;
+    text-align: center;
+
+  }
+  .headers{
+    width: 70%;
+  }
   .sectionHeader {
     font-size: 20px;
   }
@@ -1143,6 +1173,25 @@ textarea{
     transition: opacity 0.5s ease-out;
     background-position: 0 -120px;
     animation: moveSlideshow 50s linear infinite;
+  }
+  .logo2 {
+    width: 80%;
+    margin-top: 55px;
+  }
+  .logo {
+    width: 100%;
+  }
+  .motto {
+    font-size: 17px;
+    margin-top: 40px;
+  }
+  .jumbotron{
+    height: 640px;
+    width: 100%;
+  }
+  iframe{
+    height: 640px;
+    margin-top: 50px;
   }
 }
 
@@ -1159,10 +1208,10 @@ textarea{
   .modal-contentOne {
     background-image: url(none);
     background-size: cover;
-    padding: 10px 0px;
-    height: 280px;
-    width: 90%;
-    margin-left: 1%;
+
+    height: 90%;
+    width: 100%;
+
     background-color: white;
   }
   .modalButton{
@@ -1179,12 +1228,156 @@ textarea{
     width: 60%;
     height: 60%;
   }
+  .carousel-control.left{
+    font-size: 20px;
+  }
+  .carousel-control.right{
+    font-size: 20px;
+  }
   .modal-body{
     width: 90%;
+    overflow-x: hidden;
+  }
+  .photo {
+    width: %;
   }
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1140px) {
+  .socialmedianav .fa{
+    font-size: 22px;
+  }
+  .photo{
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 1480px) and (min-width: 1120px) {
+  .container:hover .eventdaymgt,
+  .container:hover .regmgt,
+  .container:hover .markdigmgt ,
+  .container:hover .vendormgt
+    {
+    transform: scale(1);
+    top: 20px;
+    left: -0%;
+    width: 130%;
+    height: auto;
+    margin-left: 5%;
+    background-color: ;
+  }
+}
+@media (max-width: 1130px) and (min-width: 772px) {
+  .container:hover .eventdaymgt,
+  .container:hover .regmgt,
+  .container:hover .markdigmgt ,
+  .container:hover .vendormgt
+    {
+    transform: scale(0.8);
+    top: 20px;
+    left: -22%;
+    width: 130%;
+    height: auto;
+    margin-left: 5%;
+    background-color: ;
+  }
+}
+@media screen and (max-width: 772px) and (min-width: 400px) {
+  .container:hover .eventdaymgt,
+  .container:hover .regmgt,
+  .container:hover .markdigmgt ,
+  .container:hover .vendormgt
+    {
+    transform: scale(0.8);
+    top: 20px;
+    left: -10.5%;
+    width: 135%;
+    height: auto;
+    background-color: ;
+  }
+}
+@media (max-width: 400px) {
+  .container:hover .eventdaymgt,
+  .container:hover .regmgt,
+  .container:hover .markdigmgt ,
+  .container:hover .vendormgt
+    {
+    transform: scale(0.7);
+    top: 20px;
+    left: -32.5%;
+    width: 150%;
+    height: auto;
+    background-color: ;
+  }
+}
+@media screen and (max-width: 1480px) and (min-width: 992px) {
+  .container:hover .prostagemgt,
+  .container:hover .volmg1,
+  .container:hover .volmgt
+    {
+    transform: scale(0.8);
+    top: 20px;
+    left: -2%;
+    width: 130%;
+    height: auto;
+    background-color: ;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 772px) {
+  .container:hover .prostagemgt,
+  .container:hover .volmg1,
+  .container:hover .volmgt
+    {
+    transform: scale(0.8);
+    top: 20px;
+    left: -21%;
+    width: 130%;
+    height: auto;
+    background-color: ;
+  }
+}
+
+@media (max-width: 771px) {
+  .container:hover .prostagemgt,
+  .container:hover .volmg1,
+  .container:hover .volmgt
+    {
+    transform: scale(0.8);
+    top: 20px;
+    left: -12%;
+    width: 130%;
+    height: auto;
+    background-color: ;
+  }
+}
+@media (max-width: 453px) {
+  .container:hover .prostagemgt,
+  .container:hover .volmg1,
+  .container:hover .volmgt
+    {
+    transform: scale(0.8);
+    top: 20px;
+    left: -33%;
+    width: 130%;
+    height: auto;
+    background-color: ;
+  }
+}
+@media (max-width: 400px) {
+  .container:hover .prostagemgt,
+  .container:hover .volmg1,
+  .container:hover .volmgt
+    {
+    transform: scale(0.7);
+    top: 20px;
+    left: -50.5%;
+    width: 150%;
+    height: auto;
+    background-color: ;
+  }
+}
+
+@media (max-width: 1580px) {
     .navbar-header {
         float: none;
     }
@@ -1197,8 +1390,8 @@ textarea{
     .navbar-collapse {
         float: right;
         margin-top: -20px;
-        margin-left: -10%;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+
+        box-shadow: inset 0 1px 0 rgba(0,0,0,0.5);
     }
     .navbar-fixed-top {
 		top: 0;
@@ -1206,7 +1399,8 @@ textarea{
 	}
     .navbar-collapse.collapse {
         display: none!important;
-        width: 59%;
+        width: 200px;
+
     }
     .navbar-nav {
         float: none!important;
@@ -1216,18 +1410,45 @@ textarea{
         float: none;
     }
     .navbar-nav>li>a {
-        padding: 5%;
+        padding-bottom: 3%;
         font-size: auto;
+        text-align: left;
     }
     .collapse.in{
   		display:block !important;
-      background: rgba(255,255,255,0.95);
-      margin-left: 20px;
+      background: rgba(215,215,215,0.95);
+      margin-right: -20px;
+      padding-bottom: 20px;
+      padding-right: 20px;
+
+
 	}
   .navbar-header{
     margin-right: 10px;
   }
   .socialmedianav{
     display: none;
+  }
+}
+
+.staffInfo{
+  font-size: 18px;
+  line-height: 30px;
+  padding: 100px;
+}
+@media (max-width: 990px) {
+  .staffInfo{
+    font-size: 13px;
+    line-height: 20px;
+    padding: 50px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 660px) {
+  .staffInfo{
+    font-size: 12px;
+    line-height: 15px;
+    padding: 10px;
+    margin-top: 50px;
   }
 }

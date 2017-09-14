@@ -7,17 +7,75 @@ $(document).ready(function(){
     })
   });
 
-  $(".eventdaymgt").hover(function(){
-    $(this).css({
-      'opacity' : '0'
-    })
-  },
-  function(){
-    $(this).css({
-      'opacity' : '1'
-    })
-  }
-)
+  // OUR SERVICES HEADERS
+
+ $(".eventdaymgt").hover(function(){
+   $("#edm").css({
+     "display" : "none"
+   })
+ },
+ function(){
+   $("#edm").css({
+     "display" : "inline-block"
+   })
+ });
+
+ $(".regmgt").hover(function(){
+   $("#rg").css({
+     "display" : "none"
+   })
+ },
+ function(){
+   $("#rg").css({
+     "display" : "inline-block"
+   })
+ });
+
+ $(".prostagemgt").hover(function(){
+   $("#psm").css({
+     "display" : "none"
+   })
+ },
+ function(){
+   $("#psm").css({
+     "display" : "inline-block"
+   })
+ });
+
+ $(".markdigmgt").hover(function(){
+   $("#mdmm").css({
+     "display" : "none"
+   })
+ },
+ function(){
+   $("#mdmm").css({
+     "display" : "inline-block"
+   })
+ });
+
+ $(".vendormgt").hover(function(){
+   $("#vm").css({
+     "display" : "none"
+   })
+ },
+ function(){
+   $("#vm").css({
+     "display" : "inline-block"
+   })
+ });
+
+ $(".volmgt").hover(function(){
+   $("#volm").css({
+     "display" : "none"
+   })
+ },
+ function(){
+   $("#volm").css({
+     "display" : "inline-block"
+   })
+ });
+
+
 
   // NAVIGATION CONTACT BUTTON ANIMATION
   $(".contactButton").hover(function(){
