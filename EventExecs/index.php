@@ -65,62 +65,7 @@ $("a").on('click', function(event) {
 });
 </script>
 
-<?php
-  if(isset($_POST['submit'])){
-    $fname=$_POST['fname'];
-    $lname=$_POST['lname'];
-    $phone=$_POST['phone'];
-    $years=$_POST['years'];
-    $mang=$_POST['mang'];
-    $about=$_POST['about'];
-    $positions=$_POST['positions'];
-    // $positions=$_POST['positions'];
 
-    $to='eddielacrosse2@gmail.com';
-    $subject='EventExecs';
-
-    $message="Position Desired: ".$positions. "\n\n".
-            "Name: ".$fname. "\n\n".
-             "Years: ".$years. "\n\n".
-             "Phone: ".$phone. "\n\n".
-             "Managment Experience: "."\n".$mang. "\n\n\n\n".
-             "About Client: "."\n".$about. "\n\n\n\n";
-
-
-
-    $headers="From: ".$email;
-
-    if(mail($to, $subject, $message, $headers  )) {
-      echo "<h1>Form 1 Sent</h1>";
-        }
-    else{
-      echo "Something went wrong";
-    }
-  }
-
- if(isset($_POST['submit2'])){
-   $name=$_POST['name'];
-   $emails=$_POST['emails'];
-   $message=$_POST['message'];
-
-   $to='eddielacrosse2@gmail.com';
-   $subject='EventExecs';
-
-   $message="Name: ".$name. "\n".
-            "Email: ".$emails. "\n\n".
-            "Message: "."\n".$message;
-
-
-    $headers="From: ".$email;
-
-   if(mail($to, $subject, $message, $headers  )) {
-      echo "<h1>Form 2 Sent</h1>";
-        }
-     else{
-       echo "Something went wrong nigguh!!!";
-    }
-   }
-?>
 <head>
 <body data-spy="scroll" data-target=".navbar" data-offset="">
 <!-- NAVBAR --><!-- NAVBAR --><!-- NAVBAR -->
@@ -562,3 +507,59 @@ $("a").on('click', function(event) {
 
 
 </body>
+<?php
+  if(isset($_POST['submit'])){
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
+    $phone=$_POST['phone'];
+    $years=$_POST['years'];
+    $mang=$_POST['mang'];
+    $about=$_POST['about'];
+    $positions=$_POST['positions'];
+    // $positions=$_POST['positions'];
+
+    $to='eddielacrosse2@gmail.com';
+    $subject='EventExecs';
+
+    $message="Position Desired: ".$positions. "\n\n".
+            "Name: ".$fname. "\n\n".
+             "Years: ".$years. "\n\n".
+             "Phone: ".$phone. "\n\n".
+             "Managment Experience: "."\n".$mang. "\n\n\n\n".
+             "About Client: "."\n".$about. "\n\n\n\n";
+
+
+
+    $headers="From: ".$email;
+
+    if(mail($to, $subject, $message, $headers  )) {
+      echo "<h1>Form 1 Sent</h1>";
+        }
+    else{
+      echo "Something went wrong";
+    }
+  }
+
+ if(isset($_POST['submit2'])){
+   $name=$_POST['name'];
+   $emails=$_POST['emails'];
+   $message=$_POST['message'];
+
+   $to='eddielacrosse2@gmail.com';
+   $subject='EventExecs';
+
+   $message="Name: ".$name. "\n".
+            "Email: ".$emails. "\n\n".
+            "Message: "."\n".$message;
+
+
+    $headers="From: ".$email;
+
+   if(mail($to, $subject, $message, $headers  )) {
+      echo "<h1>Form 2 Sent</h1>";
+        }
+     else{
+       echo "";
+    }
+   }
+?>
