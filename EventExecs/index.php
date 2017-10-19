@@ -399,7 +399,7 @@ $("a").on('click', function(event) {
                             <h1 class="contactHeader zoomIn animated wow">Contact Us Today!</h1>
                             <!-- <p class="animated wow fadeIn" style="color: #f74e47; font-size: 25px; width: 50%; margin: 0 auto; padding-top: 20px;"> We are here to help! Click below to get started!
                             </p> -->
-                            <div class="socialmedianav" style="float: none; margin: 0 auto; margin-bottom: -100px; margin-top: 50px;">
+                            <div class="socialmedianav" style="float: none; margin: 0 auto; margin-bottom: -10px; margin-top: 50px;">
                               <i class="fa fa-facebook fa-3x" href="facebook.com"></i>
                               <i class="fa fa-twitter fa-3x"></i>
                               <i class="fa fa-instagram fa-3x"></i>
@@ -445,35 +445,24 @@ $("a").on('click', function(event) {
 
                           <div class="form-group">
                           <select style="color: #f7c200;" name="positions" class="inputFields" placeholder="Select Position">
-                          <option class="inputFields" value="None Position Selected">Select Position</option>
-                          <option class="inputFields" value="Event Manager">Event Manager</option>
-                          <option class="inputFields" value="Production Manager">Production Manager</option>
-                          <option class="inputFields" value="Stage Manager">Stage Manager</option>
-                          <option class="inputFields" value="Stage Hand">Stage Hand</option>
-                          <option class="inputFields" value="Volunteer Manager">Volunteer Manager</option>
-                          <option class="inputFields" value="Vendor Manager">Vendor Manager</option>
-                          <option class="inputFields" value="Event/Production Assistant">Event/Production Assistant</option>
+                          <option style="font-family: NexaLight;" class="inputFields" value="None Position Selected">Select Position</option>
+                          <option style="font-family: NexaLight;" class="inputFields" value="Event Manager">Event Manager</option>
+                          <option style="font-family: NexaLight;" class="inputFields" value="Production Manager">Production Manager</option>
+                          <option style="font-family: NexaLight;" class="inputFields" value="Stage Manager">Stage Manager</option>
+                          <option style="font-family: NexaLight;" class="inputFields" value="Stage Hand">Stage Hand</option>
+                          <option style="font-family: NexaLight;" class="inputFields" value="Volunteer Manager">Volunteer Manager</option>
+                          <option style="font-family: NexaLight;" class="inputFields" value="Vendor Manager">Vendor Manager</option>
+                          <option style="font-family: NexaLight;" class="inputFields" value="Event/Production Assistant">Event/Production Assistant</option>
                           </select>
                           </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
                           </div>
                           <div class="modal-footer">
                             <button class=" modalButton" type="submit" name="submit" value="send" style="float: right; font-family: NexaLight">SEND</button>
-
+                            </div>
                             </form>
-                          </div>
+
                           </div>
 
                         </div>
@@ -484,14 +473,18 @@ $("a").on('click', function(event) {
 
                         <!-- Modal content-->
                           <div class="modal-contentOne">
-                          <div class="modal-body" style="margin-top: 50px; padding-bottom: 150px;">
+                          <div class="modal-body" style="margin-top: 50px; padding-bottom: 20px;">
 
                             <form method="post" name="form2">
                               <input class="inputFields" type="name" name="name" placeholder="Name / Company :" required><br>
                               <input class="inputFields" type="email" name="emails" placeholder="Email :" required><br>
-                              <textarea style="width: 95%;" rows="10"type="msg" name="message" placeholder="How can we help you? Explain the Event you need handled here: " required></textarea><br>
+                              <textarea style="width: 95%;" rows="10"type="msg" name="msg" placeholder="How can we help you? Explain the Event you need handled here: " required></textarea><br>
+                              </div>
+                              <div class="modal-footer">
                               <button class=" modalButton" type="submit2" name="submit2" value="send" style="float: right; font-family: NexaLight">SEND</button>
-                            </form>                   </div>
+                            </div>
+                            </form>
+
                           </div>
 
                         </div>
@@ -502,64 +495,6 @@ $("a").on('click', function(event) {
 
 
 
-
-
-
+                
 
 </body>
-<?php
-  if(isset($_POST['submit'])){
-    $fname=$_POST['fname'];
-    $lname=$_POST['lname'];
-    $phone=$_POST['phone'];
-    $years=$_POST['years'];
-    $mang=$_POST['mang'];
-    $about=$_POST['about'];
-    $positions=$_POST['positions'];
-    // $positions=$_POST['positions'];
-
-    $to='eddielacrosse2@gmail.com';
-    $subject='EventExecs';
-
-    $message="Position Desired: ".$positions. "\n\n".
-            "Name: ".$fname. "\n\n".
-             "Years: ".$years. "\n\n".
-             "Phone: ".$phone. "\n\n".
-             "Managment Experience: "."\n".$mang. "\n\n\n\n".
-             "About Client: "."\n".$about. "\n\n\n\n";
-
-
-
-    $headers="From: ".$email;
-
-    if(mail($to, $subject, $message, $headers  )) {
-      echo "<h1>Form 1 Sent</h1>";
-        }
-    else{
-      echo "Something went wrong";
-    }
-  }
-
- if(isset($_POST['submit2'])){
-   $name=$_POST['name'];
-   $emails=$_POST['emails'];
-   $message=$_POST['message'];
-
-   $to='eddielacrosse2@gmail.com';
-   $subject='EventExecs';
-
-   $message="Name: ".$name. "\n".
-            "Email: ".$emails. "\n\n".
-            "Message: "."\n".$message;
-
-
-    $headers="From: ".$email;
-
-   if(mail($to, $subject, $message, $headers  )) {
-      echo "<h1>Form 2 Sent</h1>";
-        }
-     else{
-       echo "";
-    }
-   }
-?>
